@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/apple/Desktop/android-pojo/pojo/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_dialog_one.xml",
+        "source": "/Users/apple/Desktop/android-pojo/pojo/app/src/main/res/layout/custom_dialog_one.xml"
+    },
+    {
+        "merged": "/Users/apple/Desktop/android-pojo/pojo/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_dialog_two.xml",
+        "source": "/Users/apple/Desktop/android-pojo/pojo/app/src/main/res/layout/custom_dialog_two.xml"
+    }
+]
