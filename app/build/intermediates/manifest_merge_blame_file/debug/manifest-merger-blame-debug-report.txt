@@ -13,47 +13,43 @@
 9-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:5:22-64
 10
 11    <application
-11-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:7:5-28:19
-12        android:name="com.emproto.pojo.PojoApplication"
-12-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:14:9-40
-13        android:allowBackup="true"
-13-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:8:9-35
-14        android:icon="@mipmap/ic_launcher"
-14-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:9:9-43
-15        android:label="@string/app_name"
-15-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:10:9-41
-16        android:roundIcon="@mipmap/ic_launcher_round"
-16-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:12:9-54
-17        android:supportsRtl="true"
-17-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:13:9-35
-18        android:theme="@style/Theme.Pojo"
-18-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:15:9-42
-19        android:usesCleartextTraffic="true" >
-19-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:11:9-44
-20        <meta-data
-20-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:16:9-18:42
-21            android:name="com.pointzi.APP_KEY"
-21-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:17:13-47
-22            android:value="EmprotoApp" />
-22-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:18:13-39
-23
-24        <activity
-24-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:19:9-27:20
-25            android:name="com.emproto.pojo.MainActivity"
-25-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:20:13-41
-26            android:exported="true" >
-26-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:21:13-36
-27            <intent-filter>
-27-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:22:13-26:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:17-69
-28-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:25:17-77
-30-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:25:27-74
-31            </intent-filter>
-32        </activity>
-33    </application>
-34
-35</manifest>
+11-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:7:5-26:19
+12        android:allowBackup="true"
+12-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:8:9-35
+13        android:icon="@mipmap/ic_launcher"
+13-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:9:9-43
+14        android:label="@string/app_name"
+14-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:10:9-41
+15        android:roundIcon="@mipmap/ic_launcher_round"
+15-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:12:9-54
+16        android:supportsRtl="true"
+16-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:13:9-35
+17        android:usesCleartextTraffic="true" >
+17-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:11:9-44
+18        <meta-data
+18-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:14:9-16:42
+19            android:name="com.pointzi.APP_KEY"
+19-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:15:13-47
+20            android:value="EmprotoApp" />
+20-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:16:13-39
+21
+22        <activity
+22-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:17:9-25:20
+23            android:name="com.emproto.pojo.MainActivity"
+23-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:18:13-41
+24            android:exported="true" >
+24-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:19:13-36
+25            <intent-filter>
+25-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:20:13-24:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:21:17-69
+26-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:21:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:17-77
+28-->/Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:27-74
+29            </intent-filter>
+30        </activity>
+31    </application>
+32
+33</manifest>

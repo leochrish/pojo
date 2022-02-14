@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:2:1-30:12
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:2:1-28:12
 	package
 		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.x
 	android:name
 		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:7:5-28:19
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:7:5-26:19
 	android:supportsRtl
 		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
@@ -25,34 +25,30 @@ ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.x
 		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
 		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:8:9-35
-	android:theme
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:15:9-42
 	android:usesCleartextTraffic
 		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:11:9-44
-	android:name
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:14:9-40
 meta-data#com.pointzi.APP_KEY
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:16:9-18:42
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:14:9-16:42
 	android:value
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:18:13-39
+		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:16:13-39
 	android:name
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:17:13-47
+		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:15:13-47
 activity#com.emproto.pojo.MainActivity
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:19:9-27:20
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:17:9-25:20
 	android:exported
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:21:13-36
+		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:20:13-41
+		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:18:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:22:13-26:29
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:17-69
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:25-66
+		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:25:17-77
+ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:25:27-74
+		ADDED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml:23:27-74
 uses-sdk
 INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/apple/Desktop/android-pojo/pojo/app/src/main/AndroidManifest.xml

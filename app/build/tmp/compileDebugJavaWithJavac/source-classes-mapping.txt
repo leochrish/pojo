@@ -15,8 +15,6 @@ com/emproto/pojo/MainActivity.java
 com/emproto/pojo/pojo/utility/PojoObserver.java
  com.emproto.pojo.pojo.utility.PojoObserver
  com.emproto.pojo.pojo.utility.PojoObserver$1
-com/emproto/pojo/PojoApplication.java
- com.emproto.pojo.PojoApplication
 com/emproto/pojo/pojo/model/ScreensRequest.java
  com.emproto.pojo.pojo.model.ScreensRequest
 com/emproto/pojo/pojo/model/ScreenModel.java
