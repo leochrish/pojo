@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.emproto.pojo"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.emproto.pojo" >
 
     <uses-sdk
         android:minSdkVersion="21"
         android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.emproto.pojo.PojoApplication"
         android:allowBackup="true"
-        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-        android:debuggable="true"
-        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Pojo"
         android:usesCleartextTraffic="true" >
         <meta-data
@@ -37,47 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name="com.pointzi.PointziProvider"
-            android:authorities="com.emproto.pojo.PointziProvider"
-            android:exported="false" />
-
-        <activity
-            android:name="com.pointzi.AskPermissionActivity"
-            android:hardwareAccelerated="true"
-            android:noHistory="true" >
-            <intent-filter android:label="activity" >
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="pointzi_author"
-                    android:scheme="pointzi" />
-            </intent-filter>
-        </activity>
-
-        <receiver
-            android:name="com.pointzi.core.StreethawkBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.pointzi.ShCoreModuleReceiver"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="com.streethawk.intent.action.gcm.STREETHAWK_DECLINED" />
-                <action android:name="com.streethawk.intent.action.gcm.STREETHAWK_POSTPONED" />
-                <action android:name="com.streethawk.intent.action.gcm.STREETHAWK_ACCEPTED" />
-                <action android:name="com.streethawk.pointzi.intent.action.EXIT_AUTHOR" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>
