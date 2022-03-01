@@ -61,16 +61,16 @@ public class PojoObserver implements OnDialogAction, ViewTreeObserver.OnGlobalLa
         for (View view : views
         ) {
             if (view.getTag() == null) {
-                view.setTag(getTag(view, "" + view.getId()));
+                view.setTag(getTag(view, "" + getViewCount(view)));
             }
             tags.add((String) view.getTag());
         }
         return tags;
     }
 
-    private int getViewCount(View view, int startIndex) {
+    private int getViewCount(View view) {
         int i = 0;
-        for (int j = startIndex; j >= 0; j--) {
+        for (int j = viewsList.size() - 1; j >= 0; j--) {
             if (view.getClass() == viewsList.get(j).getClass()) {
                 i++;
             }
