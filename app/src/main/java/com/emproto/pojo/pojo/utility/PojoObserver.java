@@ -176,7 +176,7 @@ public class PojoObserver implements OnDialogAction, ViewTreeObserver.OnGlobalLa
             layoutParams.x = (int) view.getX();
             layoutParams.y = (int) view.getY();*/
             toolTipPopup = new ToolTipPopup(context)
-                    .setContentView(view)
+                    .setAnchorView(view)
                     .setId(screenModel.getId())
                     .setTitle(screenModel.getTitle())
                     .setContent(screenModel.getContent())

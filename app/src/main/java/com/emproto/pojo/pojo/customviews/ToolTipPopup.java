@@ -2,6 +2,10 @@ package com.emproto.pojo.pojo.customviews;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -28,10 +32,13 @@ public class ToolTipPopup extends View {
     private Button buttonPrevious, buttonNext;
     private OnDialogAction onDialogAction;
     private String id;
+    private Paint paintAnchorHighlighter;
 
     public ToolTipPopup(Context context) {
         super(context);
         this.context = context;
+        paintAnchorHighlighter = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paintAnchorHighlighter.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         init();
     }
 
@@ -82,7 +89,14 @@ public class ToolTipPopup extends View {
         return this;
     }
 
-    public ToolTipPopup setContentView(@NotNull View view) {
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        postInvalidate();
+        canvas.drawRect(10, 10, 10, 10, paintAnchorHighlighter);
+    }
+
+    public ToolTipPopup setAnchorView(@NotNull View view) {
 
         Rect rectangle = new Rect();
         Window window = ((Activity) context).getWindow();
