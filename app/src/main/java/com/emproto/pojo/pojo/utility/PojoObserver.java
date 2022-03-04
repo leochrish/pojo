@@ -3,7 +3,9 @@ package com.emproto.pojo.pojo.utility;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +19,13 @@ import com.emproto.pojo.pojo.model.DataItem;
 import com.emproto.pojo.pojo.model.ScreenResponse;
 import com.emproto.pojo.pojo.model.ScreensRequest;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.JsonObject;
 
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -34,6 +41,7 @@ public class PojoObserver implements OnDialogAction, ViewTreeObserver.OnGlobalLa
     List<DataItem> screenModels;
     ApiDataSource apiDataSource;
     ToolTipPopup toolTipPopup;
+    String screenShot;
     private final FloatingActionButton floatingActionButton;
 
     public PojoObserver(Context context) {
@@ -108,8 +116,8 @@ public class PojoObserver implements OnDialogAction, ViewTreeObserver.OnGlobalLa
         return viewArrayList;
     }
 
-    private void getScreens(List<String> tags) {
-        ScreensRequest screensRequest = new ScreensRequest(tags);
+    private void getScreens(List<String> tags, String components, String screenShot) {
+        ScreensRequest screensRequest = new ScreensRequest(tags, components, screenShot);
         apiDataSource.getScreens(screensRequest)
                 .subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).
@@ -178,6 +186,7 @@ public class PojoObserver implements OnDialogAction, ViewTreeObserver.OnGlobalLa
             toolTipPopup = new ToolTipPopup(context)
                     .setAnchorView(view)
                     .setId(screenModel.getId())
+                    .setInnerPadding(15)
                     .setTitle(screenModel.getTitle())
                     .setContent(screenModel.getContent())
                     .setActionListener(this);
@@ -186,13 +195,59 @@ public class PojoObserver implements OnDialogAction, ViewTreeObserver.OnGlobalLa
         //alertDialog.show();
     }
 
+    private HashMap<Object, Object> viewGroupToHashMap(View view) {
+        HashMap<Object, Object> hashMap = new HashMap<>();
+        if (view instanceof ViewGroup) {
+            hashMap.put("componentName", view.getClass().toString());
+            hashMap.put("height", view.getHeight());
+            hashMap.put("width", view.getWidth());
+            hashMap.put("x", view.getX());
+            hashMap.put("y", view.getY());
+            hashMap.put("tag", view.getTag());
+            hashMap.put("id", view.getId());
+            List<HashMap<Object, Object>> hashMapInner = new ArrayList<>();
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                if (((ViewGroup) view).getChildAt(i) != floatingActionButton) {
+                    hashMapInner.add(viewGroupToHashMap(((ViewGroup) view).getChildAt(i)));
+                }
+            }
+            hashMap.put("children", hashMapInner);
+        } else if (view != null) {
+            hashMap.put("componentName", view.getClass().toString());
+            hashMap.put("height", view.getHeight());
+            hashMap.put("width", view.getWidth());
+            hashMap.put("x", view.getX());
+            hashMap.put("y", view.getY());
+            hashMap.put("tag", view.getTag());
+            hashMap.put("id", view.getId());
+        }
+        return hashMap;
+    }
+
+    private String getBase64FromBitmap(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
+
     @Override
     public void onGlobalLayout() {
         viewGroup = (ViewGroup) ((ViewGroup) ((Activity) context).findViewById(android.R.id.content)).getChildAt(0);
         viewsList = getAllChildren(viewGroup);
+        viewGroup.removeView(floatingActionButton);
+        View v1 = ((Activity) context).getWindow().getDecorView().getRootView();
+        v1.setDrawingCacheEnabled(true);
+        Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+        v1.setDrawingCacheEnabled(false);
+        screenShot = getBase64FromBitmap(bitmap);
         viewGroup.addView(floatingActionButton);
         floatingActionButton.setOnClickListener(view -> {
-            getScreens(addTag(viewsList));
+            getScreens(
+                    addTag(viewsList),
+                    (new JSONObject(viewGroupToHashMap(viewGroup))).toString(),
+                    "screenShot"
+            );
         });
         ((ViewGroup) ((Activity) context).findViewById(android.R.id.content)).getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }

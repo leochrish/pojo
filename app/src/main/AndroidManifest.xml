@@ -11,9 +11,6 @@
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <meta-data
-            android:name="com.pointzi.APP_KEY"
-            android:value="EmprotoApp" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

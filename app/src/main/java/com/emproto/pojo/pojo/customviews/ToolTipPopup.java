@@ -3,6 +3,7 @@ package com.emproto.pojo.pojo.customviews;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -32,13 +33,14 @@ public class ToolTipPopup extends View {
     private Button buttonPrevious, buttonNext;
     private OnDialogAction onDialogAction;
     private String id;
-    private Paint paintAnchorHighlighter;
+    private View viewAnchorHighlighter;
+    private int innerPadding = 0;
 
     public ToolTipPopup(Context context) {
         super(context);
         this.context = context;
-        paintAnchorHighlighter = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paintAnchorHighlighter.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        viewAnchorHighlighter = new View(context);
+        innerPadding = 10;
         init();
     }
 
@@ -79,6 +81,11 @@ public class ToolTipPopup extends View {
         return this;
     }
 
+    public ToolTipPopup setInnerPadding(int innerPadding) {
+        this.innerPadding = innerPadding;
+        return this;
+    }
+
     public ToolTipPopup setContent(String content) {
         textViewContent.setText(content);
         return this;
@@ -87,13 +94,6 @@ public class ToolTipPopup extends View {
     public ToolTipPopup setActionListener(OnDialogAction onDialogAction) {
         this.onDialogAction = onDialogAction;
         return this;
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        postInvalidate();
-        canvas.drawRect(10, 10, 10, 10, paintAnchorHighlighter);
     }
 
     public ToolTipPopup setAnchorView(@NotNull View view) {
@@ -115,6 +115,11 @@ public class ToolTipPopup extends View {
                 parent.setX(getX(view) < 0 ? 0 : getX(view) + parent.getWidth() > displayMetrics.widthPixels ? displayMetrics.widthPixels - parent.getWidth() : getX(view));
                 parent.setY(getY(view));
                 parent.setVisibility(VISIBLE);
+                viewAnchorHighlighter.setX(contentView.getX() - innerPadding);
+                viewAnchorHighlighter.setY(contentView.getY() - innerPadding + topBarHeight);
+                viewAnchorHighlighter.setBackgroundResource(R.drawable.drw_border);
+                viewAnchorHighlighter.getLayoutParams().width = contentView.getWidth() + innerPadding * 2;
+                viewAnchorHighlighter.getLayoutParams().height = contentView.getHeight() + innerPadding * 2;
             }
         });
         return this;
@@ -147,9 +152,11 @@ public class ToolTipPopup extends View {
     public void show() {
         setLayoutParams(new ViewGroup.LayoutParams((int) contentView.getX(), (int) contentView.getY()));
         viewGroup.addView(rootView);
+        viewGroup.addView(viewAnchorHighlighter);
     }
 
     public void cancel() {
         viewGroup.removeView(rootView);
+        viewGroup.removeView(viewAnchorHighlighter);
     }
 }
